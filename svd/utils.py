@@ -2,7 +2,21 @@ import numpy as np
 
 
 def extend_to_basis(orthonormal_set):
-    """Extends the orthonormal set to a basis of the space."""
+    """
+    Extends the orthonormal set to a basis of the space using Gram-Schmidt.
+
+    This function takes an orthonormal set of vectors and extends it to a basis
+    for the same space using the modified Gram-Schmidt process. It ensures the
+    resulting basis remains orthonormal.
+
+    Args:
+        orthonormal_set (np.ndarray): The input orthonormal set as a matrix with
+                                       each column representing a vector.
+
+    Returns:
+        np.ndarray: The extended basis as a matrix with each column representing
+                    an orthonormal vector.
+    """
     dim = orthonormal_set.shape[1]  # Number of rows gives the dimension
 
     # Initialize the full basis list with the given orthonormal vectors
